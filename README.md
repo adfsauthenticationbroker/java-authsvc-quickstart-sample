@@ -1,6 +1,6 @@
 # java-authsvc-quickstart-sample
 
-Go to your download folder
+Go to your download folder<br/>
 Start the application using the command
 >mvnw spring-boot:run
 
