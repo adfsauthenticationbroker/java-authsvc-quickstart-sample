@@ -1,0 +1,6 @@
+C:\Projects\nodejsboilerplate\test\gs-rest-service\complete>mvnw spring-boot:run
+
+go to 
+http://localhost:8080/login
+
+http://localhost:8080/verifytoken
