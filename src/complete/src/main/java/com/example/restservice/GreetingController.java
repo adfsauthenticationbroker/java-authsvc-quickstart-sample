@@ -40,6 +40,7 @@ import java.util.Base64;
 
 import static io.jsonwebtoken.SignatureAlgorithm.HS256;
 import java.util.Locale;
+import java.util.TimeZone;
 
 
 
@@ -72,8 +73,10 @@ public class GreetingController {
 		String state = sessionId;
 
 		// generate nonce salt time
-		Date date = Calendar.getInstance().getTime();  
+		Date date = Calendar.getInstance().getTime();  // ensure this time is GMT+0800 Singapore time
         DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss", Locale.ENGLISH);  // datetime must be in this format.
+		TimeZone tz = java.util.TimeZone.getTimeZone("Asia/Singapore"); // GMT+0800 Singapore time
+		dateFormat.setTimeZone(tz);
         String strDate = dateFormat.format(date);
 		String nonce = strDate + "." + sessionId; // e.g. salt + sessionid TODO: replace with your ramdom nounce
 
